@@ -61,4 +61,3 @@ PC2: Separates defensive vs possession-oriented players (Tper negatively, passes
 
 🚀 Running the App
 streamlit run /Users/{name}/{pathway}/kmeans2.py
-This README highlights the methodology, visual insights, and practical applications of the project, making it clear, organized, and portfolio-ready.
