@@ -1,91 +1,64 @@
-# kmeans-r-clusters--football-data--
+Football Player Performance Analysis
+This project explores football player performance data using Principal Component Analysis (PCA) and K-Means clustering to identify distinct player profiles. It visualizes outfield player statistics with interactive Plotly charts and is implemented as a Streamlit app—ideal for portfolio demonstrations of data analysis, clustering, and interactive visualization.
 
-This project explores football player performance data using Principal Component Analysis (PCA) and K-Means clustering to identify distinct player profiles. It visualizes outfield player statistics with interactive Plotly charts, including:
-PCA Scatter Plot: Shows players projected into two principal components, colored by cluster.
-Cluster Sizes: A bar chart displaying the number of players in each cluster.
-Radar Charts: Normalized cluster profiles highlighting strengths across key performance metrics.
-PCA Feature Loadings: Shows how much each feature contributes to player separation in the PCA components.
-The dashboard is implemented using Streamlit app and is ideal for portfolio demonstrations of data analysis, clustering, and interactive visualization.
+🔧 Tech Stack
+Python
+Pandas
+Scikit-learn
+Plotly
+PCA & K-Means
+Streamlit
 
-Tech stack: Python, Pandas, Scikit-learn, Plotly, PCA, K-Means
-
-Use cases:
+🎯 Use Cases
 Player performance profiling
 Identifying similar player clusters for scouting
-Portfolio project demonstrating data science workflow from preprocessing to visualization
+Portfolio project demonstrating a complete data science workflow (preprocessing → analysis → visualization)
 
-Features_outfield :
-    'Gper' = goals per app
-    'Aper' = assits per app
-    'Bper' = big chances per app
-    Tper'  = tackles per app
-    'Dper' = duels per app
-    Abper' = aerial battles per app
-    'Iper' = intercepts per app
-    'Cper' = crosses per app
-    'Lbper'= long balls per app
-    'Tbper'= through balls per app
-    'Sper' = saves per app 
+⚙️ Features (Outfield Player Stats)
+Feature	Description
+Gper	Goals per appearance
+Aper	Assists per appearance
+Bper	Big chances per appearance
+Tper	Tackles per appearance
+Dper	Duels per appearance
+Abper	Aerial battles per appearance
+Iper	Intercepts per appearance
+Cper	Crosses per appearance
+Lbper	Long balls per appearance
+Tbper	Through balls per appearance
+Sper	Saves per appearance
 
+📊 Visualizations
 
-Run: streamlit run /Users/{name}/{pathway}/kmeans2.py
-
-Scatter Plot: 
-Clusters 4 and 6 form the main bulk of outfield players.
-Clusters 2, 3 and 5 are smaller and more extreme likely representing specialized roles.
-Spread along PC1 is largest, meaning most variance is captured by a combination of goals, assists, and big chances (Gper, Aper, Bper).
-Spread along PC2 is smaller. Features like tackles (Tper) or passes per match contribute more to PC2.
-
-Cluster Sizes:
-Cluster 4 is the largest (~145 players), suggesting the “average” outfield player.
-Clusters 2 and 3 are tiny, probably highlighting niche roles (like defensive midfielders or high-output forwards).
-
-
-Radar Chart:
-Features are normalized, so we can compare clusters fairly. Using per 90 stats help.
+1️⃣ PCA Scatter Plot
+Shows players projected into two principal components, colored by cluster.
 Observations:
+Clusters 4 & 6: Main bulk of outfield players
+Clusters 2, 3 & 5: Smaller, specialized roles
+PC1: Largest variance, driven by Gper, Aper, Bper
+PC2: Smaller variance, influenced by defensive and passing stats
 
-Cluster 0:
-Small group of players, tightly packed.
-Low PC1 and low PC2 values → likely low overall contributions in key stats.
-Could represent support or defensive role players with limited attacking involvement.
+2️⃣ Cluster Sizes
+Bar chart displaying the number of players in each cluster
+Observations:
+Cluster 4: Largest (~145 players) → “average” outfield player
+Clusters 2 & 3: Small groups → niche roles
 
-Cluster 1:
-Moderate-to-high PC1, low PC2.
-Spread along PC1 → variability in one major component, but consistent on the other.
-Likely attacking/goal-oriented players with higher scoring or forward metrics.
+3️⃣ Radar Charts
+Normalized cluster profiles for fair comparison
+Cluster Profiles:
+Cluster 0: Low PC1 & PC2 → support/defensive role players
+Cluster 1: High PC1, low PC2 → attacking/goal-oriented players
+Cluster 2: Low PC1, slightly positive PC2 → consistent midfield/defensive support
+Cluster 3: Negative PC1, high PC2 → creative midfielders or ball-winning players
+Cluster 4: PC1 ~0–2, PC2 ~0–5 → all-round midfielders
+Cluster 5: Positive PC1, near-zero PC2 → attacking players or wingers
+Cluster 6: High PC1, slightly negative PC2 → star forwards or high-impact attackers
 
-Cluster 2:
-Low PC1, slightly positive PC2.
-Clustered close together → consistent playing style.
-Could represent midfield or defensive support players with good passing/possession stats.
+4️⃣ PCA Feature Loadings
+PC1: Dominated by attacking output (Gper, Aper, Bper)
+PC2: Separates defensive vs possession-oriented players (Tper negatively, passes positively)
 
-Cluster 3:
-Slightly negative PC1, high PC2 values.
-High on PC2 → likely strong in a secondary component, possibly defensive recoveries or assists.
-Could indicate creative midfielders or ball-winning players.
-
-Cluster 4:
-PC1 around 0–2, PC2 around 0–5.
-Densely packed → very consistent cluster.
-Likely all-round midfielders who balance attacking and defensive contributions.
-
-Cluster 5:
-Positive PC1, near-zero PC2.
-Spread along PC1 → indicates variability in primary component (maybe goal scoring, attacking metrics).
-Likely attacking players or wingers.
-
-Cluster 6:
-High PC1, slightly negative PC2.
-Few players → outliers in attack-oriented stats.
-Could represent star forwards or high-impact attackers with very strong scoring metrics.
-
-PCA Feature Loadings:
-PC1: heavily influenced by Gper, Aper, Bper → attacking output dominates first principal component.
-PC2: Tper negatively loaded, passes per match positively loaded → separates defensive vs possession-oriented players.
-
-This explains why clusters are separating based on attack vs defense and passing activity.
-
-
-   
-
+🚀 Running the App
+streamlit run /Users/{name}/{pathway}/kmeans2.py
+This README highlights the methodology, visual insights, and practical applications of the project, making it clear, organized, and portfolio-ready.
